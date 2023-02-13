@@ -3,10 +3,13 @@ package task.pokemon;
 import java.util.Scanner;
 
 class Pokemon{
-	protected String owner;
-	protected String[] skills;
-	protected static int count = 0;
+	private String owner;
+	private String[] skills;
+	public static int count = 0;
 
+	
+	
+	
 	public Pokemon() {
 		System.out.println("포켓몬 생성");
 		Pokemon.count += 1;
@@ -59,7 +62,7 @@ class Pikachu extends Pokemon{
 	
 	public void attack(int idx) {
 		System.out.printf("[삐까삐까] %s의 %s가 %s 공격 시전!\n"
-				, this.owner, name, this.skills[idx]);
+				, getOwner(), name, this.getSkills()[idx]);
 	}
 	
 }// end of Pikachu
@@ -76,7 +79,7 @@ class Ggoboogi extends Pokemon{
 	
 	public void attack(int idx) {
 		System.out.printf("[꼬북꼬북] %s의 %s가 %s 공격 시전!\n"
-				, this.owner, name, this.skills[idx]);
+				, getOwner(), name, getSkills()[idx]);
 	}
 	
 }// end of Ggoboogi
@@ -93,7 +96,7 @@ class Pairi extends Pokemon{
 	
 	public void attack(int idx) {
 		System.out.printf("[파릴파릴] %s의 %s가 %s 공격 시전!\n"
-				, this.owner, name, this.skills[idx]);
+				, this.getOwner(), name, this.getSkills()[idx]);
 	}
 	
 }// end of pairi
